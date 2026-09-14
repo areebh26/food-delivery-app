@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Tests and tooling
+coverage/
+.vite/
+.eslintcache
+
+# Package-manager logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
