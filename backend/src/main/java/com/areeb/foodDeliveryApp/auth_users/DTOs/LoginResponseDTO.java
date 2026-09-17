@@ -1,32 +1,22 @@
 package com.areeb.foodDeliveryApp.auth_users.DTOs;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Setter;
+import lombok.Getter;
 import java.util.List;
 
 
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginResponseDTO{
 
     private String token;
 
     private List<String> roles;
 
-    public LoginResponseDTO(String token, List<String> roles) {
-        this.token = token;
-        this.roles = roles;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public List<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
-    }
 }

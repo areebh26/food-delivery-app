@@ -1,14 +1,22 @@
 package com.areeb.foodDeliveryApp.auth_users.DTOs;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Setter;
+import lombok.Getter;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class RegistrationRequestDTO {
 
     @NotBlank(message = "Name is required")

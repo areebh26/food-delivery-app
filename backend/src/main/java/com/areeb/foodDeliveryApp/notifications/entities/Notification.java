@@ -1,20 +1,24 @@
 package com.areeb.foodDeliveryApp.notifications.entities;
 
+import lombok.Setter;
+import lombok.Getter;
 import com.areeb.foodDeliveryApp.enums.NotificationType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "notifications")
+@Getter
+@Setter
 public class Notification {
 
     @Id

@@ -10,5 +10,5 @@ import java.util.UUID;
 public interface OrderItemRepository
         extends JpaRepository<OrderItem, UUID> {
 
-    boolean existsByOrder_IdAndMenu_Id(Long orderId, Long menuId);
+    boolean existsByOrder_IdAndMenu_Id(UUID orderId, UUID menuId);
 }

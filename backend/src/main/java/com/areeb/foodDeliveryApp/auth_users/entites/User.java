@@ -1,14 +1,17 @@
 package com.areeb.foodDeliveryApp.auth_users.entites;
 
+import lombok.Setter;
+import lombok.Getter;
 import com.areeb.foodDeliveryApp.Order.entities.Order;
 import com.areeb.foodDeliveryApp.cart.entities.Cart;
 import com.areeb.foodDeliveryApp.payment.entities.Payment;
 import com.areeb.foodDeliveryApp.reviews.entities.Review;
+import com.areeb.foodDeliveryApp.role.entities.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.Default;
@@ -19,9 +22,11 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -65,14 +70,14 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Cart cart;
 
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(
-//            name = "users_roles",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "role_id")
-//    )
-//    private List<Role> roles;
-//
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 

@@ -1,8 +1,10 @@
 package com.areeb.foodDeliveryApp.cart.entities;
 
+import lombok.Setter;
+import lombok.Getter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 
@@ -10,10 +12,12 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "cart_item")
+@Getter
+@Setter
 public class CartItem {
 
     @Id

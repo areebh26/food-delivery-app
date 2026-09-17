@@ -1,21 +1,23 @@
 package com.areeb.foodDeliveryApp.Order.entities;
 
+import lombok.Setter;
+import lombok.Getter;
 import com.areeb.foodDeliveryApp.menu.entities.Menu;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "order_items")
+@Getter
+@Setter
 public class OrderItem {
 
     @Id

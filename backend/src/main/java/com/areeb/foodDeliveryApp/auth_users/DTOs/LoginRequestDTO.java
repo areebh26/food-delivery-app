@@ -1,10 +1,20 @@
 package com.areeb.foodDeliveryApp.auth_users.DTOs;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Setter;
+import lombok.Getter;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 
 
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginRequestDTO {
 
     @NotBlank(message = "Email is required")
@@ -14,25 +24,4 @@ public class LoginRequestDTO {
     @NotBlank(message = "Password is required")
     private String password;
 
-    public LoginRequestDTO(String email , String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String toString() {
-        return "LoginRequestDTO{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }

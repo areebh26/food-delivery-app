@@ -1,12 +1,14 @@
 package com.areeb.foodDeliveryApp.Order.entities;
 
+import lombok.Setter;
+import lombok.Getter;
 import com.areeb.foodDeliveryApp.auth_users.entites.User;
 import com.areeb.foodDeliveryApp.enums.OrderStatus;
 import com.areeb.foodDeliveryApp.enums.PaymentStatus;
 import com.areeb.foodDeliveryApp.payment.entities.Payment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -15,10 +17,12 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "orders")
+@Getter
+@Setter
 public class Order {
 
     @Id

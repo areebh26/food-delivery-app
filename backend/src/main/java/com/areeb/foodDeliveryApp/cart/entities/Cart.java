@@ -1,19 +1,23 @@
 package com.areeb.foodDeliveryApp.cart.entities;
 
+import lombok.Setter;
+import lombok.Getter;
 import com.areeb.foodDeliveryApp.auth_users.entites.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "cart")
+@Getter
+@Setter
 public class Cart {
 
     @Id
